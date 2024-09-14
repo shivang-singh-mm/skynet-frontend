@@ -1,0 +1,214 @@
+:root {
+  --background-color: #ffffff;
+  --container-margin: 50px;
+  --logo-width: 78.55px;
+  --logo-height: 72px;
+  --logo-border-radius: 10px;
+  --logo-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --company-heading-width: 192px;
+  --company-heading-height: 53px;
+  --company-heading-font-family: 'Poly';
+  --company-heading-font-size: 44.2px;
+  --company-heading-color: #1F2B3B;
+  --register-heading-width: 157px;
+  --register-heading-height: 46px;
+  --register-heading-font-family: 'Inter';
+  --register-heading-font-size: 38.4px;
+  --register-heading-color: #706969;
+  --register-heading-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --register-pre-width: 240px;
+  --register-pre-height: 25px;
+  --register-pre-font-family: 'Kumbh Sans';
+  --register-pre-font-size: 20px;
+  --register-pre-color: #1F2B3B;
+  --form-width: 60%;
+  --input-width: 100%;
+  --input-padding: 1em;
+  --input-margin: 1em 0;
+  --input-border: 1px solid #ccc;
+  --input-border-radius: 4px;
+  --button-width: 77px;
+  --button-height: 40px;
+  --button-background: #2C2C2C;
+  --button-border: 1px solid #2C2C2C;
+  --button-border-radius: 8px;
+  --button-font-family: 'Inter';
+  --button-font-size: 16px;
+  --button-color: #F5F5F5;
+  --button-hover-background: #333;
+  --login-link-width: 201px;
+  --login-link-height: 19px;
+  --login-link-font-family: 'Inter';
+  --login-link-font-size: 16px;
+  --login-link-color: #000000;
+  --section-padding: 2em;
+  --margin-top: 40px;
+}
+
+.register-container {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  margin: var(--container-margin);
+  flex-direction: column;
+}
+
+.register-header {
+  display: flex;
+  flex-direction: row;
+  gap: 21px;
+  justify-content: center;
+  align-items: center;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--background-color);
+  padding: var(--section-padding);
+  text-align: center;
+  width: 600px;
+}
+
+.logo {
+  width: var(--logo-width);
+  height: var(--logo-height);
+  /* filter: drop-shadow(var(--logo-shadow)); */
+  border-radius: var(--logo-border-radius);
+}
+
+.register-container .company-heading {
+  width: var(--company-heading-width);
+  height: var(--company-heading-height);
+  font-family: var(--company-heading-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--company-heading-font-size);
+  line-height: var(--company-heading-height);
+  color: var(--company-heading-color);
+}
+
+.register .register-heading {
+  margin-top: var(--margin-top);
+  width: var(--register-heading-width);
+  height: var(--register-heading-height);
+  font-family: var(--register-heading-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--register-heading-font-size);
+  line-height: 100%;
+  color: var(--register-heading-color);
+  text-shadow: var(--register-heading-shadow);
+}
+
+.register pre {
+  width: var(--register-pre-width);
+  height: var(--register-pre-height);
+  font-family: var(--register-pre-font-family);
+  font-style: normal;
+  font-weight: 200;
+  font-size: var(--register-pre-font-size);
+  line-height: var(--register-pre-height);
+  color: var(--register-pre-color);
+}
+
+.register form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: var(--form-width);
+}
+
+.register input,
+.register select {
+  display: block;
+  width: var(--input-width);
+  padding: var(--input-padding);
+  margin: var(--input-margin);
+  border: var(--input-border);
+  border-radius: var(--input-border-radius);
+}
+
+.register button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+  width: var(--button-width);
+  height: var(--button-height);
+  background: var(--button-background);
+  border: var(--button-border);
+  border-radius: var(--button-border-radius);
+  font-family: var(--button-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--button-font-size);
+  line-height: 100%;
+  color: var(--button-color);
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.register button:hover {
+  background: var(--button-hover-background);
+}
+
+.register .login-link {
+  width: var(--login-link-width);
+  height: var(--login-link-height);
+  font-family: var(--login-link-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--login-link-font-size);
+  line-height: 100%;
+  margin: 10px;
+  color: var(--login-link-color);
+}
+
+
+
+
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
+
+.info-msg,
+.success-msg,
+.warning-msg,
+.error-msg {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.info-msg {
+  color: #059;
+  background-color: #BEF;
+}
+
+.success-msg {
+  color: #270;
+  background-color: #DFF2BF;
+}
+
+.warning-msg {
+  color: #9F6000;
+  background-color: #FEEFB3;
+}
+
+.error-msg {
+  color: #D8000C;
+  background-color: #FFBABA;
+}
+
+/* Just for CodePen styling - don't include if you copy paste */
+html {
+  /* font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
+  /* font-weight: 300; */
+  /* margin: 25px; */
+}

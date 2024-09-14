@@ -1,0 +1,208 @@
+Microsoft Windows [Version 10.0.22621.3880]
+(c) Microsoft Corporation. All rights reserved.
+
+E:\skynet>docker-compose up --build
+time="2024-07-24T00:15:11+05:30" level=warning msg="E:\\skynet\\docker-compose.yaml: `version` is obsolete"
+[+] Building 369.3s (12/12) FINISHED                                                               docker:desktop-linux
+ => [app internal] load build definition from Dockerfile                                                           0.1s
+ => => transferring dockerfile: 567B                                                                               0.0s
+ => [app internal] load metadata for docker.io/library/node:14                                                     4.3s
+ => [app internal] load .dockerignore                                                                              0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [app 1/7] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8  179.0s
+ => => resolve docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa   0.0s
+ => => sha256:2ff1d7c41c74a25258bfa6f0b8adb0a727f84518f55f65ca845ebc747976c408 50.45MB / 50.45MB                  52.6s
+ => => sha256:b253aeafeaa7e0671bb60008df01de101a38a045ff7bc656e3b0fbfc7c05cca5 7.86MB / 7.86MB                    22.6s
+ => => sha256:3d2201bd995cccf12851a50820de03d34a17011dcbb9ac9fdf3a50c952cbb131 10.00MB / 10.00MB                  16.1s
+ => => sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa 776B / 776B                         0.0s
+ => => sha256:2cafa3fbb0b6529ee4726b4f599ec27ee557ea3dea7019182323b3779959927f 2.21kB / 2.21kB                     0.0s
+ => => sha256:1d12470fa662a2a5cb50378dcdc8ea228c1735747db410bbefb8e2d9144b5452 7.51kB / 7.51kB                     0.0s
+ => => sha256:1de76e268b103d05fa8960e0f77951ff54b912b63429c34f5d6adfd09f5f9ee2 51.88MB / 51.88MB                  75.6s
+ => => sha256:d9a8df5894511ce28a05e2925a75e8a4acbd0634c39ad734fdfba8e23d1b1569 191.85MB / 191.85MB               163.4s
+ => => sha256:6f51ee005deac0d99898e41b8ce60ebf250ebe1a31a0b03f613aec6bbc9b83d8 4.19kB / 4.19kB                    55.3s
+ => => extracting sha256:2ff1d7c41c74a25258bfa6f0b8adb0a727f84518f55f65ca845ebc747976c408                          3.8s
+ => => sha256:5f32ed3c3f278edda4fc571c880b5277355a29ae8f52b52cdf865f058378a590 35.24MB / 35.24MB                  91.0s
+ => => extracting sha256:b253aeafeaa7e0671bb60008df01de101a38a045ff7bc656e3b0fbfc7c05cca5                          0.4s
+ => => extracting sha256:3d2201bd995cccf12851a50820de03d34a17011dcbb9ac9fdf3a50c952cbb131                          0.3s
+ => => sha256:0c8cc2f24a4dcb64e602e086fc9446b0a541e8acd9ad72d2e90df3ba22f158b3 2.29MB / 2.29MB                    82.0s
+ => => extracting sha256:1de76e268b103d05fa8960e0f77951ff54b912b63429c34f5d6adfd09f5f9ee2                          3.9s
+ => => sha256:0d27a8e861329007574c6766fba946d48e20d2c8e964e873de352603f22c4ceb 450B / 450B                        82.3s
+ => => extracting sha256:d9a8df5894511ce28a05e2925a75e8a4acbd0634c39ad734fdfba8e23d1b1569                         10.7s
+ => => extracting sha256:6f51ee005deac0d99898e41b8ce60ebf250ebe1a31a0b03f613aec6bbc9b83d8                          0.0s
+ => => extracting sha256:5f32ed3c3f278edda4fc571c880b5277355a29ae8f52b52cdf865f058378a590                          3.3s
+ => => extracting sha256:0c8cc2f24a4dcb64e602e086fc9446b0a541e8acd9ad72d2e90df3ba22f158b3                          0.4s
+ => => extracting sha256:0d27a8e861329007574c6766fba946d48e20d2c8e964e873de352603f22c4ceb                          0.0s
+ => [app internal] load build context                                                                             37.1s
+ => => transferring context: 711.06MB                                                                             36.9s
+ => [app 2/7] WORKDIR /app                                                                                         0.8s
+ => [app 3/7] COPY package*.json ./                                                                                0.7s
+ => [app 4/7] RUN npm install                                                                                     47.6s
+ => [app 5/7] COPY . .                                                                                            50.1s
+ => [app 6/7] RUN npm run build                                                                                   57.7s
+ => [app 7/7] RUN npm install -g serve                                                                            12.5s
+ => [app] exporting to image                                                                                      16.0s
+ => => exporting layers                                                                                           16.0s
+ => => writing image sha256:cf9b8287f1ccba7d7bb3aca799c9cc79cfeb7ab56fccdb69f76be833fa5f1c53                       0.0s
+ => => naming to docker.io/library/skynet-app                                                                      0.0s
+[+] Running 4/4
+ ✔ Volume "skynet_postgres_data"  Created                                                                          0.0s
+ ✔ Container skynet-app-1         Recreated                                                                        2.5s
+ ✔ Container postgres             Recreated                                                                        2.3s
+ ✔ Container skynet-redis-1       Recreated                                                                        2.2s
+Attaching to postgres, app-1, redis-1
+redis-1   | 1:C 23 Jul 2024 18:51:25.421 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis-1   | 1:C 23 Jul 2024 18:51:25.422 * Redis version=7.2.5, bits=64, commit=00000000, modified=0, pid=1, just started
+redis-1   | 1:C 23 Jul 2024 18:51:25.422 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+redis-1   | 1:M 23 Jul 2024 18:51:25.422 * monotonic clock: POSIX clock_gettime
+redis-1   | 1:M 23 Jul 2024 18:51:25.425 * Running mode=standalone, port=6379.
+redis-1   | 1:M 23 Jul 2024 18:51:25.426 * Server initialized
+redis-1   | 1:M 23 Jul 2024 18:51:25.427 * Loading RDB produced by version 7.2.5
+redis-1   | 1:M 23 Jul 2024 18:51:25.427 * RDB age 3 seconds
+redis-1   | 1:M 23 Jul 2024 18:51:25.427 * RDB memory usage when created 0.92 Mb
+redis-1   | 1:M 23 Jul 2024 18:51:25.427 * Done loading RDB, keys loaded: 1, keys expired: 0.
+redis-1   | 1:M 23 Jul 2024 18:51:25.427 * DB loaded from disk: 0.000 seconds
+redis-1   | 1:M 23 Jul 2024 18:51:25.427 * Ready to accept connections tcp
+postgres  | The files belonging to this database system will be owned by user "postgres".
+postgres  | This user must also own the server process.
+postgres  |
+postgres  | The database cluster will be initialized with locale "en_US.utf8".
+postgres  | The default database encoding has accordingly been set to "UTF8".
+postgres  | The default text search configuration will be set to "english".
+postgres  |
+postgres  | Data page checksums are disabled.
+postgres  |
+postgres  | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+postgres  | creating subdirectories ... ok
+postgres  | selecting dynamic shared memory implementation ... posix
+postgres  | selecting default max_connections ... 100
+postgres  | selecting default shared_buffers ... 128MB
+postgres  | selecting default time zone ... Etc/UTC
+postgres  | creating configuration files ... ok
+app-1     |  INFO  Accepting connections at http://localhost:5000
+postgres  | running bootstrap script ... ok
+postgres  | performing post-bootstrap initialization ... ok
+postgres  | syncing data to disk ... ok
+postgres  |
+postgres  |
+postgres  | Success. You can now start the database server using:
+postgres  |
+postgres  |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+postgres  |
+postgres  | initdb: warning: enabling "trust" authentication for local connections
+postgres  | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+postgres  | waiting for server to start....2024-07-23 18:51:29.031 UTC [48] LOG:  starting PostgreSQL 16.3 (Debian 16.3-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+postgres  | 2024-07-23 18:51:29.035 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres  | 2024-07-23 18:51:29.048 UTC [51] LOG:  database system was shut down at 2024-07-23 18:51:27 UTC
+postgres  | 2024-07-23 18:51:29.056 UTC [48] LOG:  database system is ready to accept connections
+postgres  |  done
+postgres  | server started
+postgres  | CREATE DATABASE
+postgres  |
+postgres  |
+postgres  | /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/db_init.sql
+postgres  | CREATE TYPE
+postgres  | CREATE TYPE
+postgres  | CREATE TYPE
+postgres  | CREATE TABLE
+postgres  | CREATE TABLE
+postgres  | CREATE TABLE
+postgres  | CREATE TABLE
+postgres  | CREATE TABLE
+postgres  | CREATE TABLE
+postgres  | CREATE TABLE
+postgres  | CREATE TABLE
+postgres  | CREATE TABLE
+postgres  | CREATE TABLE
+postgres  | CREATE INDEX
+postgres  | CREATE INDEX
+postgres  | CREATE INDEX
+postgres  | CREATE INDEX
+postgres  | ALTER TABLE
+postgres  | ALTER TABLE
+postgres  | ALTER TABLE
+postgres  | ALTER TABLE
+postgres  | ALTER TABLE
+postgres  | ALTER TABLE
+postgres  | ALTER TABLE
+postgres  | ALTER TABLE
+postgres  | ALTER TABLE
+postgres  | ALTER TABLE
+postgres  | ALTER TABLE
+postgres  | ALTER TABLE
+postgres  | ALTER TABLE
+postgres  | ALTER TABLE
+postgres  | ALTER TABLE
+postgres  |
+postgres  |
+postgres  | waiting for server to shut down...2024-07-23 18:51:29.753 UTC [48] LOG:  received fast shutdown request
+postgres  | .2024-07-23 18:51:29.759 UTC [48] LOG:  aborting any active transactions
+postgres  | 2024-07-23 18:51:29.764 UTC [48] LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
+postgres  | 2024-07-23 18:51:29.764 UTC [49] LOG:  shutting down
+postgres  | 2024-07-23 18:51:29.767 UTC [49] LOG:  checkpoint starting: shutdown immediate
+postgres  | 2024-07-23 18:51:30.457 UTC [49] LOG:  checkpoint complete: wrote 949 buffers (5.8%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.085 s, sync=0.593 s, total=0.694 s; sync files=346, longest=0.017 s, average=0.002 s; distance=4515 kB, estimate=4515 kB; lsn=0/1952FA8, redo lsn=0/1952FA8
+postgres  | 2024-07-23 18:51:30.475 UTC [48] LOG:  database system is shut down
+postgres  |  done
+postgres  | server stopped
+postgres  |
+postgres  | PostgreSQL init process complete; ready for start up.
+postgres  |
+postgres  | 2024-07-23 18:51:30.590 UTC [1] LOG:  starting PostgreSQL 16.3 (Debian 16.3-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+postgres  | 2024-07-23 18:51:30.593 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres  | 2024-07-23 18:51:30.593 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres  | 2024-07-23 18:51:30.600 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres  | 2024-07-23 18:51:30.610 UTC [66] LOG:  database system was shut down at 2024-07-23 18:51:30 UTC
+postgres  | 2024-07-23 18:51:30.618 UTC [1] LOG:  database system is ready to accept connections
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 GET /
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 Returned 200 in 60 ms
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 GET /static/js/main.50813b3a.js
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 GET /static/css/main.b707ea81.css
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 Returned 200 in 11 ms
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 Returned 200 in 16 ms
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 GET /static/media/logo.33d5197299f136c132ee.jpg
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 GET /static/media/avtar.bbb35995deaefb0794cf.png
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 Returned 200 in 7 ms
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 GET /static/media/HomeBackground.3a189481b98655b372ec.png
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 GET /static/media/backimg.b2c1826a927d4e16b682.jpg
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 Returned 200 in 13 ms
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 Returned 200 in 40 ms
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 GET /static/media/PostBackground.dbbccc52e2c659f08a22.png
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 Returned 200 in 13 ms
+app-1     |  HTTP  7/23/2024 6:52:27 PM 172.18.0.1 Returned 200 in 40 ms
+app-1     |  HTTP  7/23/2024 6:52:28 PM 172.18.0.1 GET /favicon.ico
+app-1     |  HTTP  7/23/2024 6:52:28 PM 172.18.0.1 Returned 200 in 2 ms
+app-1     |  HTTP  7/23/2024 6:52:36 PM 172.18.0.1 GET /static/media/avtar.bbb35995deaefb0794cf.png
+app-1     |  HTTP  7/23/2024 6:52:36 PM 172.18.0.1 Returned 304 in 5 ms
+app-1     |  HTTP  7/23/2024 6:52:36 PM 172.18.0.1 GET /favicon.ico
+app-1     |  HTTP  7/23/2024 6:52:36 PM 172.18.0.1 Returned 304 in 2 ms
+app-1     |  HTTP  7/23/2024 6:52:39 PM 172.18.0.1 GET /favicon.ico
+app-1     |  HTTP  7/23/2024 6:52:39 PM 172.18.0.1 Returned 304 in 4 ms
+app-1     |  HTTP  7/23/2024 6:52:41 PM 172.18.0.1 GET /static/media/HomeBackground.3a189481b98655b372ec.png
+app-1     |  HTTP  7/23/2024 6:52:41 PM 172.18.0.1 Returned 304 in 2 ms
+app-1     |  HTTP  7/23/2024 6:52:41 PM 172.18.0.1 GET /static/media/backimg.b2c1826a927d4e16b682.jpg
+app-1     |  HTTP  7/23/2024 6:52:41 PM 172.18.0.1 Returned 304 in 2 ms
+app-1     |  HTTP  7/23/2024 6:52:41 PM 172.18.0.1 GET /static/media/PostBackground.dbbccc52e2c659f08a22.png
+app-1     |  HTTP  7/23/2024 6:52:41 PM 172.18.0.1 Returned 304 in 1 ms
+app-1     |  HTTP  7/23/2024 6:52:41 PM 172.18.0.1 GET /favicon.ico
+app-1     |  HTTP  7/23/2024 6:52:41 PM 172.18.0.1 Returned 304 in 2 ms
+app-1     |  HTTP  7/23/2024 6:54:19 PM 172.18.0.1 GET /static/css/main.b707ea81.css
+app-1     |  HTTP  7/23/2024 6:54:19 PM 172.18.0.1 Returned 304 in 2 ms
+app-1     |  HTTP  7/23/2024 6:54:20 PM 172.18.0.1 GET /static/js/main.50813b3a.js.map
+app-1     |  HTTP  7/23/2024 6:54:20 PM 172.18.0.1 GET /static/css/main.b707ea81.css.map
+app-1     |  HTTP  7/23/2024 6:54:20 PM 172.18.0.1 Returned 200 in 3 ms
+app-1     |  HTTP  7/23/2024 6:54:20 PM 172.18.0.1 Returned 200 in 81 ms
+app-1     |  HTTP  7/23/2024 6:54:23 PM 172.18.0.1 GET /static/media/HomeBackground.3a189481b98655b372ec.png
+app-1     |  HTTP  7/23/2024 6:54:23 PM 172.18.0.1 Returned 200 in 2 ms
+postgres  | 2024-07-23 18:54:58.903 UTC [80] LOG:  invalid length of startup packet
+postgres  | 2024-07-23 18:55:00.074 UTC [81] LOG:  invalid length of startup packet
+postgres  | 2024-07-23 18:55:00.080 UTC [82] LOG:  invalid length of startup packet
+postgres  | 2024-07-23 18:55:00.089 UTC [83] LOG:  invalid length of startup packet
+postgres  | 2024-07-23 18:55:00.478 UTC [84] LOG:  invalid length of startup packet
+postgres  | 2024-07-23 18:55:01.072 UTC [85] LOG:  invalid length of startup packet
+postgres  | 2024-07-23 18:55:01.078 UTC [86] LOG:  invalid length of startup packet
+postgres  | 2024-07-23 18:55:01.089 UTC [87] LOG:  invalid length of startup packet
+redis-1   | 1:M 23 Jul 2024 18:56:02.219 # Possible SECURITY ATTACK detected. It looks like somebody is sending POST or Host: commands to Redis. This is likely due to an attacker attempting to use Cross Protocol Scripting to compromise your Redis instance. Connection from 172.18.0.1:50074 aborted.
+postgres  | 2024-07-23 18:56:30.692 UTC [64] LOG:  checkpoint starting: time
+postgres  | 2024-07-23 18:56:36.100 UTC [64] LOG:  checkpoint complete: wrote 56 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.359 s, sync=0.026 s, total=5.409 s; sync files=17, longest=0.006 s, average=0.002 s; distance=301 kB, estimate=301 kB; lsn=0/199E440, redo lsn=0/199E408
+
+
+v View in Docker Desktop   o View Config   w Enable Watch

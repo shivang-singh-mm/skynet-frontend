@@ -1,0 +1,1775 @@
+{
+	"info": {
+		"_postman_id": "f205a4a6-eedb-4cc7-ba70-61986151a455",
+		"name": "Sknect Blueprints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22791231",
+		"_collection_link": "https://galactic-space-853048.postman.co/workspace/Edu-API~49453670-70bf-483f-896a-daf635eeade0/collection/22791231-f205a4a6-eedb-4cc7-ba70-61986151a455?action=share&source=collection_link&creator=22791231"
+	},
+	"item": [
+		{
+			"name": "Signup-Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"saumya@domain.com\",\r\n    \"password\":\"saumya123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:6898/api/v1/users/login"
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"saumya@domain.com\",\r\n    \"password\":\"saumya123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:6898/api/v1/users/login"
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "449"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c1-Pzf0ktYC0X5b30T2ymtRyeQROrc\""
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "connect.sid=s%3A0T3D7QNFs_HJ07hnRHQu9cVhSHMSPNpK.EGHZosM9AMWihy1%2BevH7wtdJi4wsRWuqoWJAdCvQb5g; Path=/; Expires=Fri, 19 Jul 2024 09:19:40 GMT; HttpOnly"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 09:19:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\n    \"name\": \"Saumya Singh\",\n    \"email\": \"saumya@domain.com\",\n    \"password\": \"$2b$10$lvTSSOJYvtVRVbAOaCa0Ru3LQvKNdOEPd8lhh7OJm/SqjmvTnM0mi\",\n    \"isAdmin\": false,\n    \"phone\": \"9519761316\",\n    \"phoneCode\": \"+82\",\n    \"city\": \"Seoul\",\n    \"purpose\": \"NETWORK\",\n    \"githubURL\": \"https://github.com\",\n    \"linkedInURL\": \"https://www.linkedin.com\",\n    \"aboutYou\": \"Official sknect handle\",\n    \"aboutJobTitle\": \"Startup\",\n    \"bio\": \"...\",\n    \"aspirations\": \"...\",\n    \"profilePic\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Simran Kesrwani\",\r\n  \"email\": \"simran@domain.com\",\r\n  \"password\": \"simran123\",\r\n  \"isAdmin\":false,\r\n  \"phone\": \"9519761317\", // Example phone number with South Korea country code (+82)\r\n  \"phoneCode\": \"+82\",\r\n  \"city\": \"Seoul\",\r\n  \"purpose\": \"NETWORK\",\r\n  \"githubURL\": \"https://github.com\",\r\n  \"linkedInURL\": \"https://www.linkedin.com\",\r\n  \"aboutYou\": \"Official sknect handle\",\r\n  \"aboutJobTitle\": \"Startup\",\r\n  \"bio\": \"...\",\r\n  \"aspirations\": \"...\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/users/register"
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Saumya Singh\",\r\n  \"email\": \"saumya@domain.com\",\r\n  \"password\": \"saumya123\",\r\n  \"isAdmin\":false,\r\n  \"phone\": \"9519761316\", // Example phone number with South Korea country code (+82)\r\n  \"phoneCode\": \"+82\",\r\n  \"city\": \"Seoul\",\r\n  \"purpose\": \"NETWORK\",\r\n  \"githubURL\": \"https://github.com\",\r\n  \"linkedInURL\": \"https://www.linkedin.com\",\r\n  \"aboutYou\": \"Official sknect handle\",\r\n  \"aboutJobTitle\": \"Startup\",\r\n  \"bio\": \"...\",\r\n  \"aspirations\": \"...\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:6898/api/v1/users/register"
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "449"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c1-Pzf0ktYC0X5b30T2ymtRyeQROrc\""
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "connect.sid=s%3AwOljj7EpkrDqfSAmoxr0Y0_YEe9B-F5I.2th9mOUEw%2BC4l6X%2BrdWenRp2pMTxDcYhIsdlKdRcsZQ; Path=/; Expires=Fri, 19 Jul 2024 09:04:46 GMT; HttpOnly"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 09:04:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\n    \"name\": \"Saumya Singh\",\n    \"email\": \"saumya@domain.com\",\n    \"password\": \"$2b$10$lvTSSOJYvtVRVbAOaCa0Ru3LQvKNdOEPd8lhh7OJm/SqjmvTnM0mi\",\n    \"isAdmin\": false,\n    \"phone\": \"9519761316\",\n    \"phoneCode\": \"+82\",\n    \"city\": \"Seoul\",\n    \"purpose\": \"NETWORK\",\n    \"githubURL\": \"https://github.com\",\n    \"linkedInURL\": \"https://www.linkedin.com\",\n    \"aboutYou\": \"Official sknect handle\",\n    \"aboutJobTitle\": \"Startup\",\n    \"bio\": \"...\",\n    \"aspirations\": \"...\",\n    \"profilePic\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User Post",
+			"item": [
+				{
+					"name": "Create post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mediaLink\": [\"https://www.google.com/imgres?q=.map()%20in%20javascript%20returning%20undefined&imgurl=https%3A%2F%2Fbobbyhadz.com%2Fimages%2Fblog%2Fjavascript-map-returns-undefined%2Fbanner.webp&imgrefurl=https%3A%2F%2Fbobbyhadz.com%2Fblog%2Fjavascript-map-returns-undefined&docid=eyC8vF3DJEi_FM&tbnid=3ISYxnIun-CojM&vet=12ahUKEwjzsbHg2LSHAxU53jgGHXfnDAsQM3oECBkQAA..i&w=632&h=355&hcb=2&ved=2ahUKEwjzsbHg2LSHAxU53jgGHXfnDAsQM3oECBkQAA\"],\r\n    \"caption\": \"TSkynect post\",\r\n    \"description\": \"This is officail skynect post\",\r\n    \"tags\": [\"skynect\",\"official\"],\r\n    \"landmark\": \"Delhi\",\r\n    \"userId\": \"f8d59f6c-23f0-45a8-839d-8d5627217078\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:6898/api/v1/users/post/create"
+					},
+					"response": [
+						{
+							"name": "Create post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mediaLink\": [\"https://www.google.com/imgres?q=.map()%20in%20javascript%20returning%20undefined&imgurl=https%3A%2F%2Fbobbyhadz.com%2Fimages%2Fblog%2Fjavascript-map-returns-undefined%2Fbanner.webp&imgrefurl=https%3A%2F%2Fbobbyhadz.com%2Fblog%2Fjavascript-map-returns-undefined&docid=eyC8vF3DJEi_FM&tbnid=3ISYxnIun-CojM&vet=12ahUKEwjzsbHg2LSHAxU53jgGHXfnDAsQM3oECBkQAA..i&w=632&h=355&hcb=2&ved=2ahUKEwjzsbHg2LSHAxU53jgGHXfnDAsQM3oECBkQAA\"],\r\n    \"caption\": \"TSkynect post\",\r\n    \"description\": \"This is officail skynect post\",\r\n    \"tags\": [\"skynect\",\"official\"],\r\n    \"landmark\": \"Delhi\",\r\n    \"userId\": \"f8d59f6c-23f0-45a8-839d-8d5627217078\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:6898/api/v1/users/post/create"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "747"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2eb-aCZlrO8QneT7CjvHLl1pcra04mY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 03:39:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully created post\",\n    \"body\": {\n        \"id\": \"5da4ef01-2ef0-41ea-9b36-c573eeebe457\",\n        \"date\": \"2024-07-20T03:39:52.492Z\",\n        \"mediaLink\": [\n            \"https://www.google.com/imgres?q=.map()%20in%20javascript%20returning%20undefined&imgurl=https%3A%2F%2Fbobbyhadz.com%2Fimages%2Fblog%2Fjavascript-map-returns-undefined%2Fbanner.webp&imgrefurl=https%3A%2F%2Fbobbyhadz.com%2Fblog%2Fjavascript-map-returns-undefined&docid=eyC8vF3DJEi_FM&tbnid=3ISYxnIun-CojM&vet=12ahUKEwjzsbHg2LSHAxU53jgGHXfnDAsQM3oECBkQAA..i&w=632&h=355&hcb=2&ved=2ahUKEwjzsbHg2LSHAxU53jgGHXfnDAsQM3oECBkQAA\"\n        ],\n        \"caption\": \"TSkynect post\",\n        \"description\": \"This is officail skynect post\",\n        \"tags\": [\n            \"skynect\",\n            \"official\"\n        ],\n        \"landmark\": \"Delhi\",\n        \"userId\": \"f8d59f6c-23f0-45a8-839d-8d5627217078\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"postId\":\"5da4ef01-2ef0-41ea-9b36-c573eeebe457\",\r\n    \"commentId\":\"\",\r\n    \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\r\n    \"likeType\":\"POST\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:6898/api/v1/users/like/create"
+					},
+					"response": [
+						{
+							"name": "Like Exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"postId\":\"5da4ef01-2ef0-41ea-9b36-c573eeebe457\",\r\n    \"commentId\":\"\",\r\n    \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\r\n    \"likeType\":\"POST\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:6898/api/v1/users/like/create"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31-+/KElePkWlVYlkmml9kdHAfRo1I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 03:55:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Like already exists\"\n}"
+						},
+						{
+							"name": "Post Like",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"postId\":\"5da4ef01-2ef0-41ea-9b36-c573eeebe457\",\r\n    \"commentId\":\"\",\r\n    \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\r\n    \"likeType\":\"POST\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:6898/api/v1/users/like/create"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "238"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ee-1ApAOK8CMx8Bae4d7cC+mBj0ujc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 04:27:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully created like\",\n    \"body\": {\n        \"id\": \"93f741a4-d72c-46b5-8f15-8202d43a09ef\",\n        \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\n        \"postId\": \"5da4ef01-2ef0-41ea-9b36-c573eeebe457\",\n        \"commentId\": null,\n        \"likeType\": \"POST\"\n    }\n}"
+						},
+						{
+							"name": "Comment Like",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"postId\":\"\",\r\n    \"commentId\":\"9bdd5b7f-22a3-4984-8f50-60c0fa122c4c\",\r\n    \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\r\n    \"likeType\":\"POST\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:6898/api/v1/users/like/create"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "238"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ee-lv2r0VkPMRDqhbsRoUbjNNNYTVY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 11:44:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully created like\",\n    \"body\": {\n        \"id\": \"67bbcff9-2aa5-47bd-9529-a7656d0a8d32\",\n        \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\n        \"postId\": null,\n        \"commentId\": \"9bdd5b7f-22a3-4984-8f50-60c0fa122c4c\",\n        \"likeType\": \"POST\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6898/api/v1/users/post/get/:userId/:pageNo/:pageSize",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6898",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"post",
+								"get",
+								":userId",
+								":pageNo",
+								":pageSize"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "731537e2-6fed-42f3-b994-0c942cfdbad1"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Post",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6898/api/v1/users/post/get/:userId/:pageNo/:pageSize",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6898",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"post",
+										"get",
+										":userId",
+										":pageNo",
+										":pageSize"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "731537e2-6fed-42f3-b994-0c942cfdbad1"
+										},
+										{
+											"key": "pageNo",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1245"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4dd-mTOVoL/PVSZASjAckHquRekHtko\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 03:40:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully fetched post\",\n    \"body\": [\n        {\n            \"id\": \"5da4ef01-2ef0-41ea-9b36-c573eeebe457\",\n            \"date\": \"2024-07-20T03:39:52.492Z\",\n            \"mediaLink\": [\n                \"https://www.google.com/imgres?q=.map()%20in%20javascript%20returning%20undefined&imgurl=https%3A%2F%2Fbobbyhadz.com%2Fimages%2Fblog%2Fjavascript-map-returns-undefined%2Fbanner.webp&imgrefurl=https%3A%2F%2Fbobbyhadz.com%2Fblog%2Fjavascript-map-returns-undefined&docid=eyC8vF3DJEi_FM&tbnid=3ISYxnIun-CojM&vet=12ahUKEwjzsbHg2LSHAxU53jgGHXfnDAsQM3oECBkQAA..i&w=632&h=355&hcb=2&ved=2ahUKEwjzsbHg2LSHAxU53jgGHXfnDAsQM3oECBkQAA\"\n            ],\n            \"caption\": \"TSkynect post\",\n            \"description\": \"This is officail skynect post\",\n            \"tags\": [\n                \"skynect\",\n                \"official\"\n            ],\n            \"landmark\": \"Delhi\",\n            \"userId\": \"f8d59f6c-23f0-45a8-839d-8d5627217078\",\n            \"like\": [],\n            \"_count\": {\n                \"comment\": 0,\n                \"like\": 0\n            },\n            \"user\": {\n                \"userId\": \"f8d59f6c-23f0-45a8-839d-8d5627217078\",\n                \"name\": \"Sknect VC\",\n                \"email\": \"skynect@domain.com\",\n                \"password\": \"$2b$10$B6wYxEmpDoczNwntStkzFuD3Eku6Uaw8RbvWJzkZuTY6Nvktlv6je\",\n                \"isAdmin\": true,\n                \"phone\": \"9519761315\",\n                \"phoneCode\": \"+82\",\n                \"city\": \"Seoul\",\n                \"purpose\": \"NETWORK\",\n                \"githubURL\": \"https://github.com\",\n                \"linkedInURL\": \"https://www.linkedin.com\",\n                \"aboutYou\": \"Official sknect handle\",\n                \"aboutJobTitle\": \"Startup\",\n                \"bio\": \"...\",\n                \"aspirations\": \"...\",\n                \"profilePic\": null\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Like",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6898/api/v1/users/post/get/:userId/:pageNo/:pageSize",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6898",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"post",
+								"get",
+								":userId",
+								":pageNo",
+								":pageSize"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "731537e2-6fed-42f3-b994-0c942cfdbad1"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetLike",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6898/api/v1/users/like/get?postId=5da4ef01-2ef0-41ea-9b36-c573eeebe457&commentId=",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6898",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"like",
+										"get"
+									],
+									"query": [
+										{
+											"key": "postId",
+											"value": "5da4ef01-2ef0-41ea-9b36-c573eeebe457"
+										},
+										{
+											"key": "commentId",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "700"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2bc-q9nSoPcXr5hpLmk11Eh68IHv8Ok\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 07:10:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully retrieved likes\",\n    \"body\": [\n        {\n            \"id\": \"5decced6-4099-4d9b-b0b2-317d22d9cf2b\",\n            \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\n            \"postId\": \"5da4ef01-2ef0-41ea-9b36-c573eeebe457\",\n            \"commentId\": null,\n            \"likeType\": \"POST\",\n            \"user\": {\n                \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\n                \"name\": \"Saumya Singh\",\n                \"email\": \"saumya@domain.com\",\n                \"password\": \"$2b$10$lvTSSOJYvtVRVbAOaCa0Ru3LQvKNdOEPd8lhh7OJm/SqjmvTnM0mi\",\n                \"isAdmin\": false,\n                \"phone\": \"9519761316\",\n                \"phoneCode\": \"+82\",\n                \"city\": \"Seoul\",\n                \"purpose\": \"NETWORK\",\n                \"githubURL\": \"https://github.com\",\n                \"linkedInURL\": \"https://www.linkedin.com\",\n                \"aboutYou\": \"Official sknect handle\",\n                \"aboutJobTitle\": \"Startup\",\n                \"bio\": \"...\",\n                \"aspirations\": \"...\",\n                \"profilePic\": null\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Like",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6898/api/v1/users/like/delete/:userId?commentId&postId=5da4ef01-2ef0-41ea-9b36-c573eeebe457\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6898",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"like",
+								"delete",
+								":userId"
+							],
+							"query": [
+								{
+									"key": "commentId",
+									"value": null
+								},
+								{
+									"key": "postId",
+									"value": "5da4ef01-2ef0-41ea-9b36-c573eeebe457\n"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "731537e2-6fed-42f3-b994-0c942cfdbad1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Like does not exists",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6898/api/v1/users/like/delete/:userId?commentId&postId=5da4ef01-2ef0-41ea-9b36-c573eeebe457\n",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6898",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"like",
+										"delete",
+										":userId"
+									],
+									"query": [
+										{
+											"key": "commentId",
+											"value": null
+										},
+										{
+											"key": "postId",
+											"value": "5da4ef01-2ef0-41ea-9b36-c573eeebe457\n"
+										}
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "731537e2-6fed-42f3-b994-0c942cfdbad1"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31-zImzHIKZX2PXLu+J6Av9PAsrEcE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 04:27:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"No such like exists\"\n}"
+						},
+						{
+							"name": "Like Deleted",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6898/api/v1/users/like/delete/:userId?commentId&postId=5da4ef01-2ef0-41ea-9b36-c573eeebe457\n",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6898",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"like",
+										"delete",
+										":userId"
+									],
+									"query": [
+										{
+											"key": "commentId",
+											"value": null
+										},
+										{
+											"key": "postId",
+											"value": "5da4ef01-2ef0-41ea-9b36-c573eeebe457\n"
+										}
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "731537e2-6fed-42f3-b994-0c942cfdbad1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4a-8oOgAbp2w7RpCeRBfonWd3zOd38\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 04:42:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully deleted likes\",\n    \"body\": {\n        \"count\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\r\n    \"text\": \"This is a test comment on skynct\",\r\n    // \"media\": \"\",\r\n    \"postId\": \"5da4ef01-2ef0-41ea-9b36-c573eeebe457\",\r\n    // \"parentCommentId\": ,\r\n    \"commentType\": \"POST\",\r\n    \"mentionId\": \"54ecf64b-e320-4e5e-8120-a3e8988ff736\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:6898/api/v1/users/comment/create"
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\r\n    \"text\": \"This is a test comment on skynct\",\r\n    // \"media\": \"\",\r\n    \"postId\": \"5da4ef01-2ef0-41ea-9b36-c573eeebe457\",\r\n    // \"parentCommentId\": ,\r\n    \"commentType\": \"POST\",\r\n    \"mentionId\": \"54ecf64b-e320-4e5e-8120-a3e8988ff736\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:6898/api/v1/users/comment/create"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "373"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"175-Cxs0O54hhlztiAANBGZdcZvAinU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 10:25:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully created comment\",\n    \"body\": {\n        \"id\": \"04aee6fb-e2a5-4650-8ee8-86a53535243c\",\n        \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\n        \"date\": \"2024-07-20T10:25:20.216Z\",\n        \"text\": \"This is a test comment on skynct\",\n        \"media\": [],\n        \"postId\": \"5da4ef01-2ef0-41ea-9b36-c573eeebe457\",\n        \"parentCommentId\": null,\n        \"mentionMail\": \"shivang@example.com\",\n        \"commentType\": \"POST\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Comment",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Post comment",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6898/api/v1/users/comment/get/:page/:pageSize?parentCommentId&postId=5da4ef01-2ef0-41ea-9b36-c573eeebe457",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6898",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"comment",
+										"get",
+										":page",
+										":pageSize"
+									],
+									"query": [
+										{
+											"key": "parentCommentId",
+											"value": null
+										},
+										{
+											"key": "postId",
+											"value": "5da4ef01-2ef0-41ea-9b36-c573eeebe457"
+										}
+									],
+									"variable": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "876"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36c-O145l6Ccjk2mn385UPvG17IjoAE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 10:44:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully retrieved comment\",\n    \"body\": [\n        {\n            \"id\": \"04aee6fb-e2a5-4650-8ee8-86a53535243c\",\n            \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\n            \"date\": \"2024-07-20T10:25:20.216Z\",\n            \"text\": \"This is a test comment on skynct\",\n            \"media\": [],\n            \"postId\": \"5da4ef01-2ef0-41ea-9b36-c573eeebe457\",\n            \"parentCommentId\": null,\n            \"mentionMail\": \"shivang@example.com\",\n            \"commentType\": \"POST\",\n            \"like\": [],\n            \"_count\": {\n                \"comment\": 4,\n                \"like\": 0\n            },\n            \"user\": {\n                \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\n                \"name\": \"Saumya Singh\",\n                \"email\": \"saumya@domain.com\",\n                \"password\": \"$2b$10$lvTSSOJYvtVRVbAOaCa0Ru3LQvKNdOEPd8lhh7OJm/SqjmvTnM0mi\",\n                \"isAdmin\": false,\n                \"phone\": \"9519761316\",\n                \"phoneCode\": \"+82\",\n                \"city\": \"Seoul\",\n                \"purpose\": \"NETWORK\",\n                \"githubURL\": \"https://github.com\",\n                \"linkedInURL\": \"https://www.linkedin.com\",\n                \"aboutYou\": \"Official sknect handle\",\n                \"aboutJobTitle\": \"Startup\",\n                \"bio\": \"...\",\n                \"aspirations\": \"...\",\n                \"profilePic\": null\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "Comment on Comment",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6898/api/v1/users/comment/get/:page/:pageSize?parentCommentId=04aee6fb-e2a5-4650-8ee8-86a53535243c&postId=",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6898",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"comment",
+										"get",
+										":page",
+										":pageSize"
+									],
+									"query": [
+										{
+											"key": "parentCommentId",
+											"value": "04aee6fb-e2a5-4650-8ee8-86a53535243c"
+										},
+										{
+											"key": "postId",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2492"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9bc-eRBruJPf6EAhKujihLVdjqTm38g\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 11:42:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully retrieved comment\",\n    \"body\": [\n        {\n            \"id\": \"9bdd5b7f-22a3-4984-8f50-60c0fa122c4c\",\n            \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\n            \"date\": \"2024-07-20T11:39:50.441Z\",\n            \"text\": \"This is a test comment on skynct\",\n            \"media\": [],\n            \"postId\": null,\n            \"parentCommentId\": \"04aee6fb-e2a5-4650-8ee8-86a53535243c\",\n            \"mentionMail\": \"shivang@example.com\",\n            \"commentType\": \"POST\",\n            \"like\": [],\n            \"_count\": {\n                \"comment\": 0,\n                \"like\": 0\n            },\n            \"user\": {\n                \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\n                \"name\": \"Saumya Singh\",\n                \"email\": \"saumya@domain.com\",\n                \"password\": \"$2b$10$lvTSSOJYvtVRVbAOaCa0Ru3LQvKNdOEPd8lhh7OJm/SqjmvTnM0mi\",\n                \"isAdmin\": false,\n                \"phone\": \"9519761316\",\n                \"phoneCode\": \"+82\",\n                \"city\": \"Seoul\",\n                \"purpose\": \"NETWORK\",\n                \"githubURL\": \"https://github.com\",\n                \"linkedInURL\": \"https://www.linkedin.com\",\n                \"aboutYou\": \"Official sknect handle\",\n                \"aboutJobTitle\": \"Startup\",\n                \"bio\": \"...\",\n                \"aspirations\": \"...\",\n                \"profilePic\": null\n            }\n        },\n        {\n            \"id\": \"a7999456-fa21-40b9-9a1a-312ad557fae1\",\n            \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\n            \"date\": \"2024-07-20T10:47:29.795Z\",\n            \"text\": \"This is a test comment on skynct\",\n            \"media\": [],\n            \"postId\": null,\n            \"parentCommentId\": \"04aee6fb-e2a5-4650-8ee8-86a53535243c\",\n            \"mentionMail\": \"shivang@example.com\",\n            \"commentType\": \"POST\",\n            \"like\": [],\n            \"_count\": {\n                \"comment\": 0,\n                \"like\": 0\n            },\n            \"user\": {\n                \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\n                \"name\": \"Saumya Singh\",\n                \"email\": \"saumya@domain.com\",\n                \"password\": \"$2b$10$lvTSSOJYvtVRVbAOaCa0Ru3LQvKNdOEPd8lhh7OJm/SqjmvTnM0mi\",\n                \"isAdmin\": false,\n                \"phone\": \"9519761316\",\n                \"phoneCode\": \"+82\",\n                \"city\": \"Seoul\",\n                \"purpose\": \"NETWORK\",\n                \"githubURL\": \"https://github.com\",\n                \"linkedInURL\": \"https://www.linkedin.com\",\n                \"aboutYou\": \"Official sknect handle\",\n                \"aboutJobTitle\": \"Startup\",\n                \"bio\": \"...\",\n                \"aspirations\": \"...\",\n                \"profilePic\": null\n            }\n        },\n        {\n            \"id\": \"e69ec112-9c34-4061-953f-1d165aa4f017\",\n            \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\n            \"date\": \"2024-07-20T10:28:22.361Z\",\n            \"text\": \"This is a test comment on skynct\",\n            \"media\": [],\n            \"postId\": null,\n            \"parentCommentId\": \"04aee6fb-e2a5-4650-8ee8-86a53535243c\",\n            \"mentionMail\": \"shivang@example.com\",\n            \"commentType\": \"POST\",\n            \"like\": [],\n            \"_count\": {\n                \"comment\": 0,\n                \"like\": 0\n            },\n            \"user\": {\n                \"userId\": \"731537e2-6fed-42f3-b994-0c942cfdbad1\",\n                \"name\": \"Saumya Singh\",\n                \"email\": \"saumya@domain.com\",\n                \"password\": \"$2b$10$lvTSSOJYvtVRVbAOaCa0Ru3LQvKNdOEPd8lhh7OJm/SqjmvTnM0mi\",\n                \"isAdmin\": false,\n                \"phone\": \"9519761316\",\n                \"phoneCode\": \"+82\",\n                \"city\": \"Seoul\",\n                \"purpose\": \"NETWORK\",\n                \"githubURL\": \"https://github.com\",\n                \"linkedInURL\": \"https://www.linkedin.com\",\n                \"aboutYou\": \"Official sknect handle\",\n                \"aboutJobTitle\": \"Startup\",\n                \"bio\": \"...\",\n                \"aspirations\": \"...\",\n                \"profilePic\": null\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Recommendation",
+			"item": [
+				{
+					"name": "Recommendation",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6898/api/v1/users/get/general?userId=7bd6af02-586a-4681-ad78-9388a5a5bc08&email=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6898",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"get",
+								"general"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "7bd6af02-586a-4681-ad78-9388a5a5bc08"
+								},
+								{
+									"key": "email",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6898/api/v1/users/get?userId=7bd6af02-586a-4681-ad78-9388a5a5bc08&email=",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6898",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"get"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "7bd6af02-586a-4681-ad78-9388a5a5bc08"
+										},
+										{
+											"key": "email",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "602"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25a-AOYevSn2fi3VHYXF+h6oYX91/G8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 13:31:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully retrieved generalized user\",\n    \"body\": {\n        \"userId\": \"7bd6af02-586a-4681-ad78-9388a5a5bc08\",\n        \"name\": \"Simran Kesrwani\",\n        \"email\": \"simran@domain.com\",\n        \"password\": \"$2b$10$s1axOu9QzusruqGNGEaF/er/XiTV9S0wX6AQxY.cLubd1kI2lm032\",\n        \"isAdmin\": false,\n        \"phone\": \"9519761317\",\n        \"phoneCode\": \"+82\",\n        \"city\": \"Seoul\",\n        \"purpose\": \"NETWORK\",\n        \"githubURL\": \"https://github.com\",\n        \"linkedInURL\": \"https://www.linkedin.com\",\n        \"aboutYou\": \"Official sknect handle\",\n        \"aboutJobTitle\": \"Startup\",\n        \"bio\": \"...\",\n        \"aspirations\": \"...\",\n        \"profilePic\": null,\n        \"_count\": {\n            \"followers\": 0,\n            \"following\": 2\n        },\n        \"history\": [],\n        \"timelineOfEvents\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create History",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"7bd6af02-586a-4681-ad78-9388a5a5bc08\",\r\n  \"startDate\": \"2024-06-12\",\r\n  \"endDate\": \"2024-06-30\",\r\n  \"title\":\"Xiv.tech\",\r\n  \"description\": \"I successfull server side for this company\",\r\n  \"tags\":[\"Java\",\"Pyhton\"],\r\n  \"purpose\":\"FREELANCER\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:6898/api/v1/users/history/create"
+					},
+					"response": [
+						{
+							"name": "Create History",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": \"7bd6af02-586a-4681-ad78-9388a5a5bc08\",\r\n  \"startDate\": \"2024-06-12\",\r\n  \"endDate\": \"2024-06-30\",\r\n  \"title\":\"Xiv.tech\",\r\n  \"description\": \"I successfull server side for this company\",\r\n  \"tags\":[\"Java\",\"Pyhton\"],\r\n  \"purpose\":\"FREELANCER\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:6898/api/v1/users/history/create"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "360"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"168-ppxK2GhRyEVN1XEXBHDBqVdzQOc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 13:49:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully created history\",\n    \"body\": {\n        \"id\": \"7a38582d-6b30-49e7-98d0-23449b3ac255\",\n        \"startDate\": \"2024-06-12T00:00:00.000Z\",\n        \"endDate\": \"2024-06-30T00:00:00.000Z\",\n        \"title\": \"Xiv.tech\",\n        \"description\": \"I successfull server side for this company\",\n        \"userId\": \"7bd6af02-586a-4681-ad78-9388a5a5bc08\",\n        \"tags\": [\n            \"Java\",\n            \"Pyhton\"\n        ],\n        \"purpose\": \"FREELANCER\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6898/api/v1/users/history/get/:userId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6898",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"history",
+								"get",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "7bd6af02-586a-4681-ad78-9388a5a5bc08"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6898/api/v1/users/history/get/:userId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6898",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"history",
+										"get",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "7bd6af02-586a-4681-ad78-9388a5a5bc08"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "653"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28d-1bcBGIM9qe/MRkc0dplAGSJYpxM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 13:51:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully retrieved history\",\n    \"body\": [\n        {\n            \"id\": \"7a38582d-6b30-49e7-98d0-23449b3ac255\",\n            \"startDate\": \"2024-06-12T00:00:00.000Z\",\n            \"endDate\": \"2024-06-30T00:00:00.000Z\",\n            \"title\": \"Xiv.tech\",\n            \"description\": \"I successfull server side for this company\",\n            \"userId\": \"7bd6af02-586a-4681-ad78-9388a5a5bc08\",\n            \"tags\": [\n                \"Java\",\n                \"Pyhton\"\n            ],\n            \"purpose\": \"FREELANCER\"\n        },\n        {\n            \"id\": \"001f160e-abb4-4ed6-87ff-53ea40b4cee8\",\n            \"startDate\": \"2024-06-12T00:00:00.000Z\",\n            \"endDate\": \"2024-06-30T00:00:00.000Z\",\n            \"title\": \"GOogle\",\n            \"description\": \"I successfull frontend for this company\",\n            \"userId\": \"7bd6af02-586a-4681-ad78-9388a5a5bc08\",\n            \"tags\": [\n                \"Java\",\n                \"Perl\"\n            ],\n            \"purpose\": \"FREELANCER\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete History",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6898/api/v1/users/history/delete/:historyId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6898",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"history",
+								"delete",
+								":historyId"
+							],
+							"variable": [
+								{
+									"key": "historyId",
+									"value": "001f160e-abb4-4ed6-87ff-53ea40b4cee8"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get History Copy",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6898/api/v1/users/history/delete/:historyId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6898",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"history",
+										"delete",
+										":historyId"
+									],
+									"variable": [
+										{
+											"key": "historyId",
+											"value": "001f160e-abb4-4ed6-87ff-53ea40b4cee8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "353"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"161-LyN1A2GiyQASNbjZH/ssH6W38ok\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 13:55:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully deleted history\",\n    \"body\": {\n        \"id\": \"001f160e-abb4-4ed6-87ff-53ea40b4cee8\",\n        \"startDate\": \"2024-06-12T00:00:00.000Z\",\n        \"endDate\": \"2024-06-30T00:00:00.000Z\",\n        \"title\": \"GOogle\",\n        \"description\": \"I successfull frontend for this company\",\n        \"userId\": \"7bd6af02-586a-4681-ad78-9388a5a5bc08\",\n        \"tags\": [\n            \"Java\",\n            \"Perl\"\n        ],\n        \"purpose\": \"FREELANCER\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Timeline Events",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"7bd6af02-586a-4681-ad78-9388a5a5bc08\",\r\n  \"startDate\": \"2024-06-12\",\r\n  \"endDate\": \"2024-06-30\",\r\n  \"title\":\"Completed 4k subs\",\r\n  \"desc\": \"I successfull reached 4k subs for my subs\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:6898/api/v1/users/timelineEvent/create"
+					},
+					"response": [
+						{
+							"name": "Add Timeline Events",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": \"7bd6af02-586a-4681-ad78-9388a5a5bc08\",\r\n  \"startDate\": \"2024-06-12\",\r\n  \"endDate\": \"2024-06-30\",\r\n  \"title\":\"Completed 3k subs\",\r\n  \"desc\": \"I successfull reached 3k subs for my subs\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:6898/api/v1/users/timelineEvent/create"
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "258"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"102-MhTnstdgJCMIaCV4niZPxRA3Fd8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 13:37:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"bea620ad-10d6-428f-b3cd-92e86df5edfb\",\n    \"userRefId\": \"7bd6af02-586a-4681-ad78-9388a5a5bc08\",\n    \"startDate\": \"2024-06-12T00:00:00.000Z\",\n    \"endDate\": \"2024-06-30T00:00:00.000Z\",\n    \"description\": \"I successfull reached 3k subs for my subs\",\n    \"title\": \"Completed 3k subs\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Timeline Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6898/api/v1/users/timelineEvent/get/:userId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6898",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"timelineEvent",
+								"get",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "7bd6af02-586a-4681-ad78-9388a5a5bc08"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Timeline Events",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6898/api/v1/users/timelineEvent/get/:userId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6898",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"timelineEvent",
+										"get",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "7bd6af02-586a-4681-ad78-9388a5a5bc08"
+										}
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "519"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"207-ILU5z1uuHqoaS3vNDpy8z9b0phI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jul 2024 13:38:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"57b6d7e7-6b46-4cf2-95cc-0d9267e894b4\",\n        \"userRefId\": \"7bd6af02-586a-4681-ad78-9388a5a5bc08\",\n        \"startDate\": \"2024-06-12T00:00:00.000Z\",\n        \"endDate\": \"2024-06-30T00:00:00.000Z\",\n        \"description\": \"I successfull reached 2k subs for my subs\",\n        \"title\": \"Completed 2k subs\"\n    },\n    {\n        \"id\": \"bea620ad-10d6-428f-b3cd-92e86df5edfb\",\n        \"userRefId\": \"7bd6af02-586a-4681-ad78-9388a5a5bc08\",\n        \"startDate\": \"2024-06-12T00:00:00.000Z\",\n        \"endDate\": \"2024-06-30T00:00:00.000Z\",\n        \"description\": \"I successfull reached 3k subs for my subs\",\n        \"title\": \"Completed 3k subs\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": []
+		},
+		{
+			"name": "Follow/Unfollow",
+			"item": [
+				{
+					"name": "Follow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:3000/api/v1/users/follow"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Followers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/v1/users/getFollowers"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Followings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/v1/users/getFollowing/c65f3f59-ea43-40b6-a4b4-a65bf423cd71"
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"unfolloweeUserId\" : \"c65f3f59-ea43-40b6-a4b4-a65bf423cd71\" ,\r\n    \"unfollowerUserId\" : \"c65f3f59-ea43-40b6-a4b4-a65bf423cd71\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/users/unfollow"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Search User",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "healtChekc",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
