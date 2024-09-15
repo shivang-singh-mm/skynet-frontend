@@ -1,7 +1,33 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react"
+import { useParams } from "react-router-dom";
 
-const UserProfile = (props) => {
+
+ const UserProfile = (props) => {
+//   const { userId , chatRoomId } = useParams(); // Get chatRoomId from URL params
+//   const [error, setError] = useState(null);
+
+//   const [users, setUsers] = useState([]);
+//   useEffect(() => {
+//     const fetchUsers = async () => {
+//       try {
+//         const response = await axios.get("http://localhost:3020/api/v1/users/getUsers");
+//         setUsers(response.data); // Update messages
+//         console.log("Fetched messages:", response.data); // Log messages after fetching
+//       } catch (err) {
+//         setError("Failed to load messages");
+//         console.error(err);
+//       }
+//     };
+
+//     if (chatRoomId) {
+//       fetchUsers(); // Call the function to fetch messages when chatRoomId changes
+//     }
+//   }, [chatRoomId]);
+  // console.log(chatRoomId); // To check if chatRoomId is correctly captured
+  console.log(props.receiverInfo)
   return (
+    
     <aside className="flex flex-col ml-5 w-[26%] max-md:ml-0 max-md:w-full h-full overflow-y-auto"> {/* Overflow for scrolling */}
       <div className="flex flex-col pt-7 pb-3.5 mt-5 w-full bg-white max-md:mt-6 text-sm">
         {/* Profile Section */}

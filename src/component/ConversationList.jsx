@@ -1,23 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import ConversationItem from "./ConversationItem";
 
 const ConversationList = (prop) => {
+  const [selectedConversationId, setSelectedConversationId] = useState(null);
   const user = localStorage.getItem("skyn_userId");
-  console.log(prop.conversation)
+
   if (!prop.conversation || prop.conversation.length === 0) {
     return <div>No conversations found</div>;
   }
-  // const messageObjects = prop.flatMap(chatRoom => chatRoom.messages);
-  // console.log(messageObjects)
+
+  const handleSelectConversation = (id) => {
+    setSelectedConversationId(id); // Update the selected conversation ID
+    prop.onSelectConversation(id); // Call the prop function to handle selection
+    // prop.onReceiverProfile(recieverId); // Call the prop function to handle profile
+  };
+
   return (
     <div className="conversation-list overflow-y-auto h-full">
       {prop.conversation.map((item) => {
         let otherUser = item.messages[0].fromId === user ? item.messages[0].to.name : item.messages[0].from.name;
-        
+        let recieverId = item.messages[0].fromId === user ? item.messages[0].to.id : item.messages[0].from.id;
+
         return (
-          <div 
+          <div
             key={item.id}
-            onClick={() => prop.onSelectConversation(item.id)}
+            className={`cursor-pointer ${selectedConversationId === item.id ? 'bg-gray-200' : 'bg-white'}`} // Conditionally apply the background color
+            onClick={() => handleSelectConversation(item.id, recieverId)}
           >
             <ConversationItem
               name={otherUser}
@@ -34,6 +42,47 @@ const ConversationList = (prop) => {
 };
 
 export default ConversationList;
+
+// import React from "react";
+// import ConversationItem from "./ConversationItem";
+
+// const ConversationList = (prop) => {
+//   const user = localStorage.getItem("skyn_userId");
+//   console.log(prop.conversation)
+//   if (!prop.conversation || prop.conversation.length === 0) {
+//     return <div>No conversations found</div>;
+//   }
+//   // const messageObjects = prop.flatMap(chatRoom => chatRoom.messages);
+//   // console.log(messageObjects)
+//   return (
+//     <div className="conversation-list overflow-y-auto h-full">
+//       {prop.conversation.map((item) => {
+//         let otherUser = item.messages[0].fromId === user ? item.messages[0].to.name : item.messages[0].from.name;
+//         let recieverId = item.messages[0].fromId === user ? item.messages[0].to.id : item.messages[0].from.id;
+//         return (
+//           <div 
+//             key={item.id}
+//             onClick={() => {
+//               prop.onSelectConversation(item.id)
+//               prop.onReceiverProfile(recieverId)
+//               }
+//             }
+//           >
+//             <ConversationItem
+//               name={otherUser}
+//               lastMessage={item.messages[0].content}
+//               time={item.messages[0].timeStamp}
+//               chatRoomId={item.messages[0].chatRoomId}
+//               seen={item.messages[0].seen}
+//             />
+//           </div>
+//         );
+//       })}
+//     </div>
+//   );
+// };
+
+// export default ConversationList;
 // import React, { useEffect } from "react";
 
 // // const [activeChatRoomId, setActiveChatRoomId] = useState(null);

@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from "axios";
 import Sidebar from "../component/Sidebar";
 import ChatArea from "../component/ChatArea";
 import UserProfile from "../component/UserProfile";
 const ConversationPage = () => {
+
   const [conversations, setConversations] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [receiverId , setReceiverId] = useState([]);
+  // const [receiverName , setReceiverName] = useState(Name);
+
   const [error, setError] = useState(null);
   const { userId, chatRoomId } = useParams();
   const navigate = useNavigate();
@@ -28,26 +33,82 @@ const ConversationPage = () => {
   const handleConversationSelect = (chatRoomId) => {
     navigate(`/chat/${userId}/${chatRoomId}`);
   };
-  // const handleReceiverProfile
-  return (
-    <div className="flex flex-col h-screen overflow-hidden bg-white">
-      <div className="flex flex-row flex-grow overflow-hidden mt-[4rem]">
-        <Sidebar 
-          conversations={conversations}
-          onSelectConversation={handleConversationSelect}
-          className="flex-none w-[20%] h-full overflow-hidden" 
-        />
-        <ChatArea 
-          chatRoomId={chatRoomId}
-          className="flex-grow h-full overflow-hidden" 
-        />
-        <UserProfile 
-        chatRoomId={chatRoomId}
-        className="flex-none w-[26%] h-full overflow-hidden" />
+  const handleReceiverProfile = (receiverId) => {
+      setReceiverId(receiverId)
+      return receiverId;
+  };
 
-      </div>
-      {error && <div className="text-red-500">{error}</div>}
-    </div>
+  // const handleReceiverProfile = async (receiverId) => {
+  //   try {
+  //     const response = await axios.get("http://localhost:3020/api/v1/users/getUsers");
+  //     setUsers(response.data); // Update messages
+  //     console.log("Fetched messages:", response.data); // Log messages after fetching
+  //   } catch (err) {
+  //     setError("Failed to load messages");
+  //     console.error(err);
+  //   }
+  //   setReceiverInfo(users.find(user => user.userId === receiverId));
+  //   console.log("Fetched receiverInfo:", receiverInfo); // Log messages after fetching
+  //   return receiverInfo
+
+  // };
+
+
+
+
+  return (
+    <div className="flex flex-col w-screen h-screen overflow-hidden bg-white">
+  {/* Navbar placeholder */}
+  <div className="h-[4rem] bg-gray-800"> {/* Adjust this height as per your navbar */}
+    {/* Navbar content */}
+  </div>
+
+  {/* Main content area below the navbar */}
+  <div className="flex flex-grow overflow-hidden">
+    {/* Sidebar (adjust width to 30% with proper overflow) */}
+    <Sidebar 
+      conversations={conversations}
+      onSelectConversation={handleConversationSelect}
+      onReceiverProfile={handleReceiverProfile}
+      className="w-[30%] h-full overflow-y-auto" // Sidebar is scrollable
+    />
+
+    {/* ChatArea (adjust to 70% width and ensure full height with overflow) */}
+    <ChatArea 
+      chatRoomId={chatRoomId}
+      className="relative flex flex-col ml-5 w-[70%] h-full max-md:ml-0 max-md:w-full overflow-y-auto" // ChatArea is scrollable
+    />
+
+    {/* Uncomment UserProfile if needed */}
+    {/* <UserProfile 
+      chatRoomId={chatRoomId}
+      className="flex-none w-[26%] h-full overflow-hidden"
+    /> */}
+  </div>
+
+  {/* Error message display */}
+  {error && <div className="text-red-500">{error}</div>}
+</div>
+
+
+  //   <div className="flex flex-col overflow-hidden bg-white">
+  // <div className="flex flex-row mt-[1] ">
+  //   <Sidebar 
+
+  //     conversations={conversations}
+  //     onSelectConversation={handleConversationSelect}
+  //     onReceiverProfile={handleReceiverProfile}
+  //     className="max-w-[30%] h-full overflow-hidden" 
+  //   />
+  //   <ChatArea 
+  //     chatRoomId={chatRoomId}
+  //     className="relative flex flex-col max-w-full h-screen" 
+  //   />
+  //   {/* <UserProfile 
+  //   chatRoomId={chatRoomId}
+  //   className="flex-none max-w-[26%] h-full overflow-hidden" /> */}
+
+
   );
 };
 
