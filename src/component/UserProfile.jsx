@@ -4,27 +4,7 @@ import { useParams } from "react-router-dom";
 
 
  const UserProfile = (props) => {
-//   const { userId , chatRoomId } = useParams(); // Get chatRoomId from URL params
-//   const [error, setError] = useState(null);
 
-//   const [users, setUsers] = useState([]);
-//   useEffect(() => {
-//     const fetchUsers = async () => {
-//       try {
-//         const response = await axios.get("http://localhost:3020/api/v1/users/getUsers");
-//         setUsers(response.data); // Update messages
-//         console.log("Fetched messages:", response.data); // Log messages after fetching
-//       } catch (err) {
-//         setError("Failed to load messages");
-//         console.error(err);
-//       }
-//     };
-
-//     if (chatRoomId) {
-//       fetchUsers(); // Call the function to fetch messages when chatRoomId changes
-//     }
-//   }, [chatRoomId]);
-  // console.log(chatRoomId); // To check if chatRoomId is correctly captured
   console.log(props.receiverInfo)
   return (
     

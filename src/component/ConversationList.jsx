@@ -12,7 +12,6 @@ const ConversationList = (prop) => {
   const handleSelectConversation = (id) => {
     setSelectedConversationId(id); // Update the selected conversation ID
     prop.onSelectConversation(id); // Call the prop function to handle selection
-    // prop.onReceiverProfile(recieverId); // Call the prop function to handle profile
   };
 
   return (
@@ -24,7 +23,7 @@ const ConversationList = (prop) => {
         return (
           <div
             key={item.id}
-            className={`cursor-pointer ${selectedConversationId === item.id ? 'bg-gray-200' : 'bg-white'}`} // Conditionally apply the background color
+            className={`cursor-pointer ${selectedConversationId === item.id ? 'bg-gray-200' : 'bg-white'}`} 
             onClick={() => handleSelectConversation(item.id, recieverId)}
           >
             <ConversationItem

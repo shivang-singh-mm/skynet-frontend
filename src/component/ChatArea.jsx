@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import MessageList from "./MessageList";
 import MessageInput from "./MessageInput";
 import { useParams, Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import { io } from "socket.io-client";
 const socket = io('http://localhost:3020'); // Socket connection
 
 const ChatArea = () => {
-  const { chatRoomId } = useParams(); // Get chatRoomId from URL params
+  const { chatRoomId } = useParams(); 
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState(null);
   const [receiverName, setReceiverName] = useState("");
@@ -53,7 +53,6 @@ const ChatArea = () => {
   }, []);
 
   const markReceiverMessagesAsSeen = () => {
-    // Filter unseen messages from the receiver
     const unseenReceiverMessages = messages.filter(
       (msg) => msg.fromId === receiverId && !msg.seen
     );
@@ -61,10 +60,8 @@ const ChatArea = () => {
     if (unseenReceiverMessages.length > 0) {
       const unseenIds = unseenReceiverMessages.map(msg => msg.id);
 
-      // Emit event to mark these messages as seen
       socket.emit('read-msgs', { data: unseenIds });
 
-      // Optionally, update the state to reflect that these messages are seen
       setMessages(prevMessages =>
         prevMessages.map(msg =>
           unseenIds.includes(msg.id) ? { ...msg, seen: true } : msg
@@ -82,10 +79,8 @@ const ChatArea = () => {
       return;
     }
 
-    // Emit message to socket
     socket.emit('send-msg', { from, to, content: messageContent });
 
-    // Optimistically update the messages list
     const newMessage = {
       fromId: from,
       toId: to,
@@ -94,26 +89,24 @@ const ChatArea = () => {
     };
     setMessages((prevMessages) => [...prevMessages, newMessage]);
 
-    // After sending a message, mark unseen messages from receiver as seen
     markReceiverMessagesAsSeen();
   };
+
+  // Sort messages by timestamp before passing to MessageList
+  const sortedMessages = messages.slice().sort((a, b) => new Date(a.timeStamp) - new Date(b.timeStamp));
 
   return (
     <main className="relative flex flex-col w-[100%] h-screen max-md:ml-0 max-md:w-full">
       <div className="flex flex-col w-full h-full">
-        {/* Header with receiver's name */}
         <div className="bg-zinc-100 border-b border-gray-300 p-4 mt-[4rem]">
           <h2 className="text-lg font-bold">
             <Link to={`/profile/${receiverId}`}>{receiverName}</Link>
           </h2>
         </div>
-
-        {/* Message list is scrollable and takes full width */}
         <div className="flex-grow overflow-y-auto bg-neutral-100 bg-opacity-70">
-          <MessageList messages={messages} />
+          {/* Reverse and sort the messages array before passing to MessageList */}
+          <MessageList messages={sortedMessages} />
         </div>
-
-        {/* Message input is fixed at the bottom */}
         <div className="sticky bottom-0 w-full bg-zinc-100 border-t border-gray-300">
           <MessageInput onSendMessage={handleSendMessage} />
         </div>
