@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import MessageList from "./MessageList";
 import MessageInput from "./MessageInput";
 import { useParams, Link } from "react-router-dom";
@@ -13,24 +13,32 @@ const ChatArea = () => {
   const [error, setError] = useState(null);
   const [receiverName, setReceiverName] = useState("");
   const [receiverId, setReceiverId] = useState("");
+  const [page, setPage] = useState(1); // State for pagination
+  const [hasMoreMessages, setHasMoreMessages] = useState(true); // Flag to check if more messages are available
   const user = localStorage.getItem("skyn_userId");
+  const messageListRef = useRef(null); // Ref for the message list container
 
   useEffect(() => {
-    const fetchMessages = async () => {
+    const fetchMessages = async (pageNum) => {
       try {
         const response = await axios.get(
-          `http://localhost:3020/api/v1/users/msgs/${chatRoomId}?page=1`
+          `http://localhost:3020/api/v1/users/msgs/${chatRoomId}?page=${pageNum}`
         );
-        setMessages(response.data); // Update messages
+        if (response.data.length > 0) {
+          setMessages((prevMessages) => [...response.data, ...prevMessages]);
+          setPage(pageNum);
+        } else {
+          setHasMoreMessages(false); // No more messages to load
+        }
       } catch (err) {
         setError("Failed to load messages");
       }
     };
 
     if (chatRoomId) {
-      fetchMessages();
+      fetchMessages(page);
     }
-  }, [chatRoomId]);
+  }, [chatRoomId, page]);
 
   useEffect(() => {
     if (messages.length > 0) {
@@ -43,7 +51,7 @@ const ChatArea = () => {
   useEffect(() => {
     // Listen for incoming messages
     socket.on('receive-msg', (data) => {
-      setMessages((prevMessages) => [...prevMessages, data]);
+      setMessages((prevMessages) => [data, ...prevMessages]);
     });
 
     return () => {
@@ -87,13 +95,20 @@ const ChatArea = () => {
       content: messageContent,
       timeStamp: new Date().toISOString(),
     };
-    setMessages((prevMessages) => [...prevMessages, newMessage]);
+    setMessages((prevMessages) => [newMessage, ...prevMessages]);
 
     markReceiverMessagesAsSeen();
   };
 
   // Sort messages by timestamp before passing to MessageList
   const sortedMessages = messages.slice().sort((a, b) => new Date(a.timeStamp) - new Date(b.timeStamp));
+
+  // Handle scrolling to the top for loading more messages
+  const handleScroll = () => {
+    if (messageListRef.current.scrollTop === 0 && hasMoreMessages) {
+      setPage((prevPage) => prevPage + 1); // Increment the page number to load more messages
+    }
+  };
 
   return (
     <main className="relative flex flex-col w-[100%] h-screen max-md:ml-0 max-md:w-full">
@@ -103,8 +118,11 @@ const ChatArea = () => {
             <Link to={`/profile/${receiverId}`}>{receiverName}</Link>
           </h2>
         </div>
-        <div className="flex-grow overflow-y-auto bg-neutral-100 bg-opacity-70">
-          {/* Reverse and sort the messages array before passing to MessageList */}
+        <div
+          className="flex-grow overflow-y-auto bg-neutral-100 bg-opacity-70"
+          onScroll={handleScroll}
+          ref={messageListRef}
+        >
           <MessageList messages={sortedMessages} />
         </div>
         <div className="sticky bottom-0 w-full bg-zinc-100 border-t border-gray-300">

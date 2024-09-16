@@ -27,6 +27,7 @@ const ConversationList = (prop) => {
             onClick={() => handleSelectConversation(item.id, recieverId)}
           >
             <ConversationItem
+                
               name={otherUser}
               lastMessage={item.messages[0].content}
               time={item.messages[0].timeStamp}
