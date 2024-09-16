@@ -1,89 +1,41 @@
-import { useState, useEffect, useRef } from "react";
-import React from "react";
+
+import React, { useState, useEffect, useRef } from "react";
 import MessageItem from "./MessageItem";
-import { io } from 'socket.io-client';
 
-const socket = io('http://localhost:3020'); // Connect to the Socket.IO server
-
-const MessageList = (props) => {
-  const [messages, setMessages] = useState([]);
-  const [latestMessageTime, setLatestMessageTime] = useState('');
+const MessageList = ({ messages, onLoadMoreMessages, hasMoreMessages }) => {
+  const [latestMessageTime, setLatestMessageTime] = useState("");
   const user = localStorage.getItem("skyn_userId");
   const messagesEndRef = useRef(null); // Ref for scrolling to the bottom
+  const messageListRef = useRef(null); // Ref for the message list container
 
-  useEffect(() => {
-    // Update messages from props
-    const sortedMessages = [...props.messages].sort((a, b) => new Date(a.timeStamp) - new Date(b.timeStamp));
-    setMessages(sortedMessages);
-
-    // Emit the message to the Socket.IO server
-    const idList = sortedMessages.map(item => item.id);
-    console.log(sortedMessages);
-    console.log(idList);
-
-    try {
-      socket.emit('read-msgs', { data: idList });
-    } catch (error) {
-      console.error('Error sending message:', error);
-    }
-  }, [props.messages]);
-
-  // useEffect(() => {
-  //   // Listen for incoming messages from the Socket.IO server
-  //   socket.on('receive-msg', (data) => {
-  //     console.log(`Received new message: ${data.content}`);
-  //     setMessages((prevMessages) => {
-  //       // Add new message and sort
-  //       const updatedMessages = [...prevMessages, data].sort((a, b) => new Date(a.timeStamp) - new Date(b.timeStamp));
-  //       return updatedMessages;
-  //     });
-  //   });
-
-  //   // Clean up socket listener on component unmount
-  //   return () => {
-  //     socket.off('receive-msg');
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   // Listen for sent messages
-  //   socket.on('send-msg', (data) => {
-  //     console.log(`Sent new message: ${data.content}`);
-  //     setMessages((prevMessages) => {
-  //       // Add new message and sort
-  //       const updatedMessages = [...prevMessages, data].sort((a, b) => new Date(a.timeStamp) - new Date(b.timeStamp));
-  //       return updatedMessages;
-  //     });
-  //   });
-
-  //   return () => {
-  //     socket.off('send-msg');
-  //   };
-  // }, []);
-
+  // Scroll to the bottom when messages are updated
   useEffect(() => {
     if (messages.length > 0) {
-      // Filter messages sent by the current user
       const userMessages = messages.filter((message) => message.fromId === user);
-
-      // Sort messages to get the latest one
       userMessages.sort((a, b) => new Date(b.timeStamp) - new Date(a.timeStamp));
-
-      // If there are any messages from the user, set the latest message time
       if (userMessages.length > 0) {
         setLatestMessageTime(userMessages[0].timeStamp);
       }
     }
-
-    // Scroll to the bottom of the messages container
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, user]);
 
+  // Handle scrolling to the top for loading more messages
+  const handleScroll = () => {
+    if (messageListRef.current.scrollTop === 0 && hasMoreMessages) {
+      onLoadMoreMessages(); // Trigger loading more messages
+    }
+  };
+
   return (
-    <div className="flex-grow flex flex-col px-3 py-3 pb-1 max-w-full w-full overflow-auto">
+    <div
+      className="flex-grow flex flex-col px-3 py-3 pb-1 max-w-full w-full overflow-auto"
+      onScroll={handleScroll}
+      ref={messageListRef}
+    >
       {messages.length > 0 ? (
         messages.map((message) => (
-          <MessageItem 
+          <MessageItem
             key={message.id}
             fromId={message.fromId}
             toId={message.toId}
